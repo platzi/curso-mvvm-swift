@@ -24,3 +24,12 @@ struct ToDoRoundedCorner: Shape {
         return Path(path.cgPath)
     }
 }
+
+#Preview{
+    VStack {
+        Text("Hello, World!")
+            .padding()
+            .background(Color.red)
+            .clipShape(ToDoRoundedCorner(radius: 10, corners: .allCorners))
+    }
+}

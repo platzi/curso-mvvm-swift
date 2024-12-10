@@ -24,3 +24,11 @@ extension View {
         }
     }
 }
+
+#Preview {
+    Text("Hello, World!")
+        .padding()
+        .background(Color.red)
+        .cornerRadius(10, corners: .allCorners)
+        .transparentScrolling()
+}

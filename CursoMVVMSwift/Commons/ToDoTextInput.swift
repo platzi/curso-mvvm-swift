@@ -73,3 +73,19 @@ public struct ToDoTextInput: View {
     }
     
 }
+
+#Preview {
+    Group {
+        ToDoTextInput(
+            "Ingrese nombre tarea",
+            text: .constant(""),
+            label: "Tarea"
+        )
+        ToDoTextInput(
+            "(Opcional) Escriba el detalle de la tarea",
+            text: .constant(""),
+            label: "Detalle",
+            variant: .textEditor
+        )
+    }
+}
