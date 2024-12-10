@@ -15,7 +15,7 @@ This project is intended for training MVVM Architecture in Swift for iOS applica
 Clone this repository
 
 ```
-git clone git@github.com:platzi/curso-mvvm-swift-base.git
+git clone git@github.com:platzi/curso-mvvm-swift.git
 ```
 
 Import from Xcode and run.
