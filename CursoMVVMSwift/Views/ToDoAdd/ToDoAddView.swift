@@ -58,7 +58,11 @@ public struct ToDoAddView: View {
             Spacer()
             Button {
                 if let todo = todo {
-                    // Actualización
+                    viewModel.updateToDo(
+                        todo,
+                        withNewTitle: title,
+                        note: note,
+                        date: date)
                 } else {
                     viewModel.addToDo(
                         withTitle: title,
@@ -80,7 +84,11 @@ public struct ToDoAddView: View {
             .disabled(isSaveDisable)
         }
         .onAppear {
-           
+            if let todo = todo {
+                title = todo.title
+                note = todo.note ?? ""
+                date = todo.date
+            }
         }
     }
     

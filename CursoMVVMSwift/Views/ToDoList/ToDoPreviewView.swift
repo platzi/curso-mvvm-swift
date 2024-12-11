@@ -46,7 +46,7 @@ struct ToDoPreviewView: View {
                     
                     HStack(spacing: 16) {
                         Button {
-                            
+                            showedTodoCreationSheet = true
                         } label: {
                             Text("Editar")
                                 .frame(maxWidth: .infinity)
@@ -88,8 +88,15 @@ struct ToDoPreviewView: View {
             .frame(maxHeight: UIScreen.main.bounds.height)
             .zIndex(2)
             .overlay {
-               
-                
+                if showedTodoCreationSheet {
+                    ToDoSheet(isShow: $showedTodoCreationSheet) {
+                        ToDoAddView(
+                            todo: safeToDo,
+                            showed: $showedTodoCreationSheet
+                        )
+                    }
+                    .ignoresSafeArea(.keyboard)
+                }
             }
         } else {
             EmptyView()
