@@ -34,8 +34,7 @@ public struct ToDoArchivedItemView: View {
                     }
                     
                     Button {
-                        
-                        
+                        viewModel.unarchiveToDo(todo)
                     } label: {
                         Image(systemName: "plus")
                             .font(.system(size: 20, weight: .semibold))

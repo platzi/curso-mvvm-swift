@@ -109,7 +109,13 @@ public final class ToDoViewModel: ObservableObject {
     }
     
     public func unarchiveToDo(_ todo: ToDoEntity) {
+        guard
+            let index = todos.firstIndex(of: todo)
+        else { return }
         
+        todos[index].isArchived = false
+        
+        saveData()
     }
     
     public func deleteToDo(_ todo: ToDoEntity) {
