@@ -119,6 +119,12 @@ public final class ToDoViewModel: ObservableObject {
     }
     
     public func deleteToDo(_ todo: ToDoEntity) {
+        guard
+            let index = todos.firstIndex(of: todo)
+        else { return }
+        let todoToRemove = todos[index]
+        storeContainer.viewContext.delete(todoToRemove)
         
+        saveData()
     }
 }
