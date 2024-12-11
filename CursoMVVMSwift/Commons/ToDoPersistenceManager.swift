@@ -2,8 +2,6 @@
 //  ToDoPersistenceManager.swift
 //  CursoMVVMSwift
 //
-//  Created by Gustavo Lizárraga on 10/12/24.
-//
 import CoreData
 
 final class ToDoPersistenceManager {

@@ -2,12 +2,12 @@
 //  ToDoList.swift
 //  CursoMVVMSwift
 //
-//  Created by Gustavo Lizárraga on 10/12/24.
-//
 
 import SwiftUI
 
 public struct ToDoList: View {
+    
+    @State private var showedSheet = false
     
     let columns: [GridItem] = [
         GridItem(.flexible(), spacing: 8),
@@ -21,7 +21,12 @@ public struct ToDoList: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .overlay {
-                
+                if showedSheet {
+                    ToDoSheet(isShow: $showedSheet) {
+                        ToDoAddView(showed: $showedSheet)
+                    }
+                    .ignoresSafeArea(.keyboard)
+                }
             }
         }
         .navigationTitle("ToDos")
@@ -36,7 +41,7 @@ public struct ToDoList: View {
                             .foregroundStyle(Color.primary)
                     }
                     Button {
-                        
+                        showedSheet.toggle()
                     } label: {
                         Image(systemName: "plus")
                             .font(.system(size: 20, weight: .semibold))

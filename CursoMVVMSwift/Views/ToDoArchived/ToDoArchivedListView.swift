@@ -2,8 +2,6 @@
 //  ToDoArchivedListView.swift
 //  CursoMVVMSwift
 //
-//  Created by Gustavo Lizárraga on 10/12/24.
-//
 
 import SwiftUI
 
