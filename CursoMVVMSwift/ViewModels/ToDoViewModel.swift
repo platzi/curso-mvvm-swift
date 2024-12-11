@@ -2,8 +2,6 @@
 //  ToDoViewModel.swift
 //  CursoMVVMSwift
 //
-//  Created by Gustavo Lizárraga on 10/12/24.
-//
 
 import Foundation
 import CoreData
@@ -12,13 +10,13 @@ import Combine
 public final class ToDoViewModel: ObservableObject {
  
     @Published private(set) var todos: [ToDoEntity] = []
-    
+
     var cancellables = Set<AnyCancellable>()
     
     private var storeContainer: NSPersistentContainer {
         return ToDoPersistenceManager.shared.container
     }
-        
+
     init() {
         fetchToDos()
     }
@@ -52,7 +50,7 @@ public final class ToDoViewModel: ObservableObject {
         
         return index
     }
-        
+    
     public func validateInput(ofText text: String) -> Bool {
         guard
             text.trimmingCharacters(in: .whitespaces).count > 2
@@ -86,5 +84,4 @@ public final class ToDoViewModel: ObservableObject {
     public func deleteToDo(_ todo: ToDoEntity) {
         
     }
-    
 }
