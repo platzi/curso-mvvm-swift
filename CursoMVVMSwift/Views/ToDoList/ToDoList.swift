@@ -36,7 +36,8 @@ public struct ToDoList: View {
                     }
                     .padding(.horizontal)
                 } else {
-                    
+                    NoToDosView(showedCreationSheet: $showedSheet)
+                        .offset(y: UIScreen.main.bounds.height * 0.3)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
