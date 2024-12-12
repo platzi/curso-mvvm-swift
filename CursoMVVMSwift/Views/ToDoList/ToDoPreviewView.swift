@@ -37,6 +37,7 @@ struct ToDoPreviewView: View {
                                 .fontWeight(.semibold)
                         }
                         Spacer()
+                        ToDoStatusView(todo: safeToDo)
                     }
                     
                     if let note = safeToDo.note, !note.isEmpty {
